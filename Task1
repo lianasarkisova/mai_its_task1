@@ -1,0 +1,55 @@
+from random import *
+import array as arr
+
+data = arr.array('i', [randint(0, 999)])
+hist = arr.array('i', [0,0,0,0,0,0,0,0,0,0])
+n = 0
+for i in range(0, 1000000):
+    data.append(randint(0, 999))
+    a = data[n]//100
+    hist[a] = hist[a]+1
+    n = n + 1
+print(hist)
+
+
+import time
+import random
+def initListWithRandomNumbers():
+    rand_list=[]
+    n = 1000
+    for i in range(n):
+        rand_list.append(random.randint(0,999))
+    return rand_list
+def calcSumm(arr):
+    summ = 0
+    for val in arr:
+        summ = summ + val
+    return summ
+a = initListWithRandomNumbers()
+mx = 0
+mn = 100
+av = 0
+for p in range(100):
+    # starting time
+    start = time.time()
+    calcSumm(a)
+    # end time
+    end = time.time()
+    # total time taken
+    runtime = end-start
+    if runtime < mn:
+        mn = runtime
+        min_time = runtime
+    else:
+        min_time = mn
+    if runtime > mx:
+        mx = runtime
+        max_time = runtime
+    else:
+        max_time = mx
+    p = p+1
+    av = av+runtime
+av_time = av/100
+print('Minimum runtime is', min_time)
+print('Maximum runtime is', max_time)
+print('Average runtime is', av_time)
