@@ -7,3 +7,20 @@ def Triangle():
       elif i%2 == 0:
         print()
 Triangle()
+
+#вычисление декартова расстояния между гистограммами
+import math
+import typing
+
+def HistDistance(hist1^ List[int], hist2^ List[int])->float
+    try:
+        dist = 0
+        if len(hist1) != len(hist2):
+            return
+
+        hist_elem = 0
+        while hist_elem < len(hist1):
+            dist += sqrt((hist1[hist_elem]**2-hist2[hist_elem]**)
+            return(dist)
+    except:
+        print('error')
