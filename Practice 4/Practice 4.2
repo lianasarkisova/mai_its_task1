@@ -1,0 +1,15 @@
+from git import Repo
+with open('gitUrl.txt') as source:
+    gitUrl = source.readlines()
+res = {}
+gitUrl = [url.rstrip()  for url in gitUrl]
+for url in gitUrl:
+    try:
+        git.Repo.clone_from(url, f"{url[url.rfind('/') + 1:]}-https")
+        res[url] = 'True'
+    except:
+        res[url] = 'error'
+    with open("res.txt", "w") as File:
+        for i in git_url:
+            File.write(f"{i}\n")
+            File.write(f"{res[i]}\n")
