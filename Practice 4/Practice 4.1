@@ -1,0 +1,9 @@
+#генератор чисел
+def sequence_generator():
+    n = 0
+    while True:
+        yield n
+        n +=2
+seq_elements = sequence_generator()
+for n in seq_elements:
+    print(n)
