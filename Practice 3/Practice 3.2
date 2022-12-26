@@ -1,0 +1,30 @@
+import pygame, time
+
+def Read(name_file):
+    Hist = []
+    try:
+        file = open(name_file, 'r')
+    except:
+        print("error")
+    with file:
+        lines = file.readlines()
+        for line in lines:
+            Hist.append(lst)
+    return Hist
+
+Array = Read("data.txt")
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            quit()
+        for i in Array:
+            if i == 1:
+                rect.move_ip(2, 0)
+            elif i == 2:
+                rect.move_ip(-2, 0)
+            elif i == 3:
+                rect.move_ip(0, 2)
+            elif i == 4:
+                rect.move_ip(0, -2)
+    pygame.draw.rect(screen, (255, 255, 255), rect)
+    pygame.display.update()
